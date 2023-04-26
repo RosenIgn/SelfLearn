@@ -1,0 +1,590 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F9D3101A-2C59-4EAD-B951-E3FD92A8E022}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Self_Learn</RootNamespace>
+    <AssemblyName>SelfLearn</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>sl-logo2.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Guna.UI2">
+      <HintPath>..\..\..\..\Downloads\Guna.UI2.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="mysql.data, Version=8.0.26.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Desktop\Олимпиада\mysql.data.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AdminPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AdminPage.Designer.cs">
+      <DependentUpon>AdminPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ExamAnswers.cs" />
+    <Compile Include="ExamQuestions.cs" />
+    <Compile Include="MainExams.cs" />
+    <Compile Include="NewSettingsPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="NewSettingsPage.Designer.cs">
+      <DependentUpon>NewSettingsPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RankingsHeaderPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RankingsHeaderPage.Designer.cs">
+      <DependentUpon>RankingsHeaderPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TextBookHeaderPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TextBookHeaderPage.Designer.cs">
+      <DependentUpon>TextBookHeaderPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TextBookPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TextBookPage.Designer.cs">
+      <DependentUpon>TextBookPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShowControl.cs" />
+    <Compile Include="DBConnection.cs" />
+    <Compile Include="Exams.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Exams.Designer.cs">
+      <DependentUpon>Exams.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form3.Designer.cs">
+      <DependentUpon>Form3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HomePage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HomePage.Designer.cs">
+      <DependentUpon>HomePage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Quiz.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Quiz.Designer.cs">
+      <DependentUpon>Quiz.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Rankings.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Rankings.Designer.cs">
+      <DependentUpon>Rankings.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AdminPage.resx">
+      <DependentUpon>AdminPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Exams.resx">
+      <DependentUpon>Exams.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewSettingsPage.resx">
+      <DependentUpon>NewSettingsPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RankingsHeaderPage.resx">
+      <DependentUpon>RankingsHeaderPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TextBookHeaderPage.resx">
+      <DependentUpon>TextBookHeaderPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TextBookPage.resx">
+      <DependentUpon>TextBookPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form3.resx">
+      <DependentUpon>Form3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HomePage.resx">
+      <DependentUpon>HomePage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Quiz.resx">
+      <DependentUpon>Quiz.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rankings.resx">
+      <DependentUpon>Rankings.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include=".editorconfig" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Principna_shema_lazer" />
+    <None Include="Resources\showeye.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\splasheye.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\aboutus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\admin-settings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\background.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\closeButton.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\contacts.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\discord.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exams.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\homePage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mailIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\passwordIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ranking.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\settings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\textbook.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tree.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\userIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sl-logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sl-logo2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sl-logo2-white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sl-logo-white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\undraw_Graduation_re_gthn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\funny_people.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\teacher.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\teacher2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\teacherIlustration2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\teacherIlustration3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\teacherIlustration4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\teacherIllustration1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minimize.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\converter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logOut.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Exams1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Exams2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Exams3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\homepage1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\homepage3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\homepage2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\homepage4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\quizPicture2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\quizPicture1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\textBookHeaderPage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\magneticfield.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\microwaves.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\timerIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Kulon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CoulombImage1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CoulombImage2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Amper.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AmperImage2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AmperImage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PictureIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SettingsImage3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SettingsImage4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SettingsImage5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FinishedExam.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ornamenti.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\adminPage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\textBookHeaderPage2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sl-logo-white.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ACGenerator.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ACGraphic.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sl-logo2.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\elektroliten_kondenzator.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\KapacitetFormula.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Kondenzatori.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Мисловна карта - Кулон.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Трансформатори.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PrenasqneNaEnergiq.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TransformatoriZadachi.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Rankings2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Rankings3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Rankings1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Rankings4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HeaderLogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Отражение_на_светлината.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Пречупване_на_светлината.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Formula_na_Transformatora.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Prenasqne_Na_Moshtnost.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Vruzka_mejdu_tokovete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\GranichenUgul.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Дисперсия на светлината.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Небесна_дъга.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Разлагане_на_светлината.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\05022021-Interferentsia.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Opit_na_Ung.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Uslovie_za_maksimum.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Uslovie_za_minimum.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\physics1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\physics2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\physics3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\physics4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\physics5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Atomi.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\OsnovnoSustoqnie.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RidbergFormula.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Lazer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Stimulirano_spontanno_poglushtane.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Principna_shema.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Zvezdi.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Protonen_cikul.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Spektur_svetimost.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Zakon_na_Om.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Posledovatelno_usporedno_svurzvane.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Vutreshno_suprotivlenie.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Zakon_za_cqlata_veriga.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Termistor.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Poluprovodnikov_diod.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\P-n_prehod.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Grafika_harmonichno_treptene.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Harmonichno_treptene.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Prujinno_mahalo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Matematichno_mahalo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Shum.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Zvuk.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ZakonNaFaradei.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\homePic1.png" />
+    <None Include="Resources\homePic2.png" />
+    <None Include="Resources\homePic3.png" />
+    <Content Include="sl-logo2.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+  </PropertyGroup>
+</Project>
